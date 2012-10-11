@@ -1,0 +1,59 @@
+//Text-Shadow
+@mixin text-shadow($color, $length, $width, $blur:0){
+	text-shadow: $color $length $width $blur;
+}
+
+//Box-Shadow
+@mixin box-shadow($color, $length, $width, $blur:0, $inset:false){
+	@if($inset){
+		box-shadow: $color $length $width $blur inset;
+	}@else{
+		box-shadow: $color $length $width $blur;
+	}
+}
+
+//Border-Radius
+@mixin border-radius($topleft, $topright:0, $bottomright:0, $bottomleft:0){
+	
+	@if($topright == 0){
+		
+		@if($bottomright == 0){
+		
+			@if($bottomleft == 0){
+				border-radius:$topleft;
+			}@else{
+				border-radius:$topleft $topright $bottomright $bottomleft;
+			}
+			
+		}@else{
+			border-radius:$topleft $topright $bottomright $bottomleft;
+		}
+		
+	}@else{
+		border-radius:$topleft $topright $bottomright $bottomleft;
+	}
+	
+}
+
+@mixin gradient($cStart, $cEnd){
+	background: $cStart; // Old browsers
+	background: -moz-linear-gradient(top, $cStart 0%, $cEnd 100%); // FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$cStart), color-stop(100%,$cEnd)); // Chrome,Safari4+
+	background: -webkit-linear-gradient(top, $cStart 0%,$cEnd 100%); // Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top, $cStart 0%,$cEnd 100%); // Opera 11.10+
+	background: -ms-linear-gradient(top, $cStart 0%,$cEnd 100%); // IE10+
+	background: linear-gradient(top, $cStart 0%,$cEnd 100%); // W3C
+}
+
+@mixin rotate($n){
+	-webkit-transform: rotate($n); 
+	-moz-transform: rotate($n);
+}
+
+@mixin opacity($percent:50){
+	$value: $percent / 100;
+	
+	opacity: $value;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=$percent)";
+	filter: alpha(opacity=$percent);
+}
