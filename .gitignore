@@ -31,3 +31,17 @@ Thumbs.db
 # SASS #
 ########
 .sass-cache
+
+# IDE #
+#######
+.project
+.settings
+.buildpath
+
+# Typo3 #
+#########
+webapp/typo3
+webapp/typo3temp
+webapp/typo3conf/temp_*
+webapp/typo3conf/deprecation*
+webapp/t3lib
