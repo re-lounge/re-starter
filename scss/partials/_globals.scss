@@ -17,6 +17,9 @@ $column-width: 60px;
 $gutter-width: 20px;
 $columns: 12;
 
+// CSS wird mit Media Queries gerendert
+$renderForIe: false !default;
+
 // Set $total-width to 100% for a fluid layout
 $total-width: gridsystem-width($columns);
 
